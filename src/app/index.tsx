@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Stack, Box, Text} from "@chakra-ui/react";
+import {Container} from "@chakra-ui/react";
 
 import Navbar from "./components/Navbar";
 import Routes from "./routes";

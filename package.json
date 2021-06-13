@@ -11,11 +11,15 @@
     "@chakra-ui/react": "^1.5.2",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
+    "@types/styled-components": "^5.1.10",
     "framer-motion": "^4.1.8",
+    "node-sass": "^6.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^4.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "sass": "^1.34.1",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^1.3.0",

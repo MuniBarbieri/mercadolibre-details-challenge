@@ -4,11 +4,13 @@ import {Stack, Box, Image, Divider, Text} from "@chakra-ui/react";
 import {Product} from "../types";
 import stichW from "../../../../assets/stichW.png";
 
+import {Carousel} from "./Carousel";
+
 interface ProductImagesProps {
   product: Product;
 }
 
-const ProductImages: FunctionComponent<ProductImagesProps> = ({product}) => {
+const ProductView: FunctionComponent<ProductImagesProps> = ({product}) => {
   return (
     <Stack direction="column">
       <Stack direction="row" flex={1} justifyContent="space-between" padding={8}>
@@ -29,7 +31,8 @@ const ProductImages: FunctionComponent<ProductImagesProps> = ({product}) => {
           <Image boxSize="468px" objectFit="contain" src={stichW} />
         </Stack>
       </Stack>
-      <Stack direction="row">
+      <Carousel />
+      {/* <Stack direction="row">
         <Box
           border="1px"
           borderColor="gray.400"
@@ -65,9 +68,9 @@ const ProductImages: FunctionComponent<ProductImagesProps> = ({product}) => {
           <Image fit="cover" height="224px" src={stichW} width="224px" />
           <Box>$1150</Box>
         </Box>
-      </Stack>
+      </Stack> */}
     </Stack>
   );
 };
 
-export default ProductImages;
+export default ProductView;
