@@ -48,7 +48,7 @@ export default {
         {
           id: "616691-MLA27900381255_082018",
           url: "http://http2.mlstatic.com/D_616691-MLA27900381255_082018-O.jpg",
-          secure_url: "https://http2.mlstatic.com/D_616691-MLA27900381255_082018-O.jpg",
+          secure_url: " ",
           size: "500x500",
           max_size: "800x800",
           quality: "",
