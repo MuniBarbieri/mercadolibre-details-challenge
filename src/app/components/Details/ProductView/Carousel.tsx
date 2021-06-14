@@ -1,5 +1,5 @@
-import React, {useState, useRef, useEffect} from "react";
-import {Stack, Text, Icon, Link, Image, Box, Container, Button} from "@chakra-ui/react";
+import React, {useState} from "react";
+import {Stack, Text, Icon, Image, Button} from "@chakra-ui/react";
 import {IoIosArrowDropright, IoIosArrowDropleft} from "react-icons/io";
 import styled from "styled-components";
 
@@ -15,36 +15,43 @@ import "./carousel.scss";
 export const Carousel = () => {
   const totalCards = [car1, car2, car3, car4, car5, car6];
 
-  const carouselArray = [car1, car2, car3];
-
   const [x, setX] = useState(0);
-  const [carousel, setCarousel] = useState([...carouselArray]);
-
-  useEffect(() => {
-    console.log("Se monto el componente", x);
-  }, []);
 
   const goLeft = () => {
-    console.log("Esto es x", x);
     setX(x + 330);
   };
 
   const goRight = () => {
-    console.log("Esto es x", x);
-
     setX(x - 330);
   };
 
   return (
-    <div className="carousel-container">
-      <div className="carousel-slider">
+    <Stack
+      boxSizing="border-box"
+      className="carousel-container"
+      display="flex"
+      height="50vh"
+      margin={0}
+      padding={0}
+      position="relative"
+    >
+      <Stack
+        className="carousel-slider"
+        direction="row"
+        display="flex"
+        height="30vh"
+        justifyContent="space-between"
+        maxWidth="766px"
+        position="static"
+        width="100%"
+      >
         {x !== 0 && (
           <Button alignSelf="center" className="slideLeft" variant="unstyled" onClick={goLeft}>
             <Icon as={IoIosArrowDropleft} color="twitter.500" height={10} width={10} />
           </Button>
         )}
-        <div className="carousel-items-container">
-          {carousel.map((item, index) => (
+        <Stack alignItems="center" direction="row" display="flex" overflowX="hidden">
+          {totalCards.map((item, index) => (
             <Card key={index} className="slide" style={{transform: `translateX(${x}%)`}}>
               <Image height={56} objectFit="contain" overflowY="hidden" src={item} width={56} />
               <Stack direction="column" padding={4} spacing={0}>
@@ -57,14 +64,14 @@ export const Carousel = () => {
               </Stack>
             </Card>
           ))}
-        </div>
+        </Stack>
         {x == 0 && (
           <Button alignSelf="center" className="slideRight" variant="unstyled" onClick={goRight}>
             <Icon as={IoIosArrowDropright} color="twitter.500" height={10} width={10} />
           </Button>
         )}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 };
 
@@ -77,4 +84,8 @@ const Card = styled.div`
   box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
   height: 100%;
   transition: 0.5s;
+  &:hover {
+    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
+  }
+  min-width: 224px;
 `;

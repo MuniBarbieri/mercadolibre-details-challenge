@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useState} from "react";
 import {Stack, Box, Image, Divider, Text} from "@chakra-ui/react";
 
 import {Product} from "../types";
@@ -11,6 +11,14 @@ interface ProductImagesProps {
 }
 
 const ProductView: FunctionComponent<ProductImagesProps> = ({product}) => {
+  const [productImage, setProductImage] = useState(stichW);
+
+  const changeImage = (e: any) => {
+    const img = e.target.src;
+
+    setProductImage(img);
+  };
+
   return (
     <Stack direction="column">
       <Stack direction="row" flex={1} justifyContent="space-between" padding={8}>
@@ -22,53 +30,17 @@ const ProductView: FunctionComponent<ProductImagesProps> = ({product}) => {
               borderColor="gray.400"
               borderRadius="6px"
               padding={1}
+              onClick={changeImage}
             >
               <Image boxSize="44px" fit="contain" src={picture.url} />
             </Box>
           ))}
         </Stack>
         <Stack alignSelf="center" paddingRight={4}>
-          <Image boxSize="468px" objectFit="contain" src={stichW} />
+          <Image boxSize="468px" objectFit="contain" src={productImage} />
         </Stack>
       </Stack>
       <Carousel />
-      {/* <Stack direction="row">
-        <Box
-          border="1px"
-          borderColor="gray.400"
-          borderRadius="6px"
-          boxShadow="md"
-          padding={1}
-          width="fit-content"
-        >
-          <Image fit="cover" height="224px" src={stichW} width="224px" />
-          <Divider />
-          <Text>$1150</Text>
-        </Box>
-        <Box
-          border="1px"
-          borderColor="gray.400"
-          borderRadius="6px"
-          boxShadow="md"
-          padding={1}
-          width="fit-content"
-        >
-          <Image fit="cover" height="224px" src={stichW} width="224px" />
-          <Divider />
-        </Box>
-        <Box
-          border="1px"
-          borderColor="gray.400"
-          borderRadius="6px"
-          boxShadow="md"
-          flexDirection="column"
-          padding={1}
-          width="fit-content"
-        >
-          <Image fit="cover" height="224px" src={stichW} width="224px" />
-          <Box>$1150</Box>
-        </Box>
-      </Stack> */}
     </Stack>
   );
 };
