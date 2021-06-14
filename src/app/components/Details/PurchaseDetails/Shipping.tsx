@@ -7,9 +7,9 @@ import {Url} from "../../../utilis";
 export const Shipping = () => {
   return (
     <Stack direction="row">
-      <Icon as={HiOutlineTruck} color="#00a650" height={8} width={8} />
+      <Icon as={HiOutlineTruck} color="success.600" height={8} width={8} />
       <Stack direction="column" paddingY={1}>
-        <Text color="#00a650" lineHeight="15px">
+        <Text color="success.600" lineHeight="15px">
           Llega gratis <b>entre el viernes y el jueves 24 de junio</b>
         </Text>
         <Text color="blackAlpha.600" lineHeight="15px">

@@ -7,9 +7,9 @@ import {Url} from "../../../utilis";
 export const Returns = () => {
   return (
     <Stack direction="row">
-      <Icon as={RiArrowGoBackFill} color="#00a650" height={8} width={8} />
+      <Icon as={RiArrowGoBackFill} color="success.600" height={8} width={8} />
       <Stack direction="column">
-        <Text color="#00a650" lineHeight="15px">
+        <Text color="success.600" lineHeight="15px">
           Devolución gratis
         </Text>
         <Text color="blackAlpha.600" lineHeight="15px">

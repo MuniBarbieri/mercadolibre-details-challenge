@@ -10,19 +10,17 @@ import car4 from "../../../../assets/car4.png";
 import car5 from "../../../../assets/car5.png";
 import car6 from "../../../../assets/car6.png";
 
-import "./carousel.scss";
-
 export const Carousel = () => {
   const totalCards = [car1, car2, car3, car4, car5, car6];
 
   const [x, setX] = useState(0);
 
   const goLeft = () => {
-    setX(x + 330);
+    setX(x + 320);
   };
 
   const goRight = () => {
-    setX(x - 330);
+    setX(x - 320);
   };
 
   return (
@@ -30,7 +28,7 @@ export const Carousel = () => {
       boxSizing="border-box"
       className="carousel-container"
       display="flex"
-      height="50vh"
+      height="30vh"
       margin={0}
       padding={0}
       position="relative"
@@ -39,7 +37,7 @@ export const Carousel = () => {
         className="carousel-slider"
         direction="row"
         display="flex"
-        height="30vh"
+        height="35vh"
         justifyContent="space-between"
         maxWidth="766px"
         position="static"
@@ -53,10 +51,12 @@ export const Carousel = () => {
         <Stack alignItems="center" direction="row" display="flex" overflowX="hidden">
           {totalCards.map((item, index) => (
             <Card key={index} className="slide" style={{transform: `translateX(${x}%)`}}>
-              <Image height={56} objectFit="contain" overflowY="hidden" src={item} width={56} />
+              <Stack overflow="hidden">
+                <Image height={56} objectFit="contain" overflowY="hidden" src={item} width={56} />
+              </Stack>
               <Stack direction="column" padding={4} spacing={0}>
                 <Text fontSize={25}>$1600</Text>
-                <Text color="#00a650" fontSize={18} fontWeight={400}>
+                <Text color="success.500" fontSize={18} fontWeight={400}>
                   Envio Gratis
                 </Text>
                 <Text fontSize={14}>Peluche Stich</Text>
