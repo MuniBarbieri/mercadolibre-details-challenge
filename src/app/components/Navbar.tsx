@@ -1,5 +1,15 @@
 import React from "react";
-import {Container, Stack, Box, Image, Input, Text, StackDivider, Icon} from "@chakra-ui/react";
+import {
+  Container,
+  Stack,
+  Box,
+  Image,
+  Input,
+  Text,
+  StackDivider,
+  Icon,
+  Link,
+} from "@chakra-ui/react";
 import {AiOutlineSearch} from "react-icons/ai";
 import {GoLocation} from "react-icons/go";
 import {FiPrinter} from "react-icons/fi";
@@ -16,9 +26,9 @@ const Navbar: React.FC = () => {
           <Stack direction="column" spacing={3}>
             <Stack direction={{base: "column", md: "row"}} justifyContent="space-between">
               <Stack direction="row" flex={1} spacing={12}>
-                <a href={Url.mercadolibreHome}>
+                <Link href={Url.mercadolibreHome}>
                   <Image objectFit="contain" src={logo} />
-                </a>
+                </Link>
                 <Stack
                   alignItems="center"
                   bg="white"
@@ -86,29 +96,29 @@ const Navbar: React.FC = () => {
                   spacing={6}
                 >
                   <Stack direction="row" spacing={6}>
-                    <a>
+                    <Link _hover={{color: "black"}} color="gray.700">
                       <Text>Categorias</Text>
-                    </a>
-                    <a href={Url.ofertas}>
+                    </Link>
+                    <Link _hover={{color: "black"}} color="gray.700" href={Url.ofertas}>
                       <Text>Ofertas</Text>
-                    </a>
-                    <a href={Url.historial}>
+                    </Link>
+                    <Link _hover={{color: "black"}} color="gray.700" href={Url.historial}>
                       <Text>Historial</Text>
-                    </a>
-                    <a href={Url.supermercado}>
+                    </Link>
+                    <Link _hover={{color: "black"}} color="gray.700" href={Url.supermercado}>
                       <Text>Supermercado</Text>
-                    </a>
+                    </Link>
                   </Stack>
                   <Stack direction="row" spacing={6}>
-                    <a href={Url.moda}>
+                    <Link _hover={{color: "black"}} color="gray.700" href={Url.moda}>
                       <Text>Moda</Text>
-                    </a>
-                    <a href={Url.login}>
+                    </Link>
+                    <Link _hover={{color: "black"}} color="gray.700" href={Url.login}>
                       <Text>Vender</Text>
-                    </a>
-                    <a href={Url.ayuda}>
+                    </Link>
+                    <Link _hover={{color: "black"}} color="gray.700" href={Url.ayuda}>
                       <Text>Ayuda</Text>
-                    </a>
+                    </Link>
                   </Stack>
                 </Stack>
               </Stack>
@@ -117,9 +127,9 @@ const Navbar: React.FC = () => {
                 <Text>Crea tu cuenta</Text>
                 <Text>Ingresa</Text>
                 <Text>Tus compras</Text>
-                <a href={Url.login}>
+                <Link href={Url.login}>
                   <Icon as={RiShoppingCartLine} height={4} width={4} />
-                </a>
+                </Link>
               </Stack>
             </Stack>
           </Stack>

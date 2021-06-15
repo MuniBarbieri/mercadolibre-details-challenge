@@ -11,16 +11,31 @@ import car5 from "../../../../assets/car5.png";
 import car6 from "../../../../assets/car6.png";
 
 export const Carousel = () => {
-  const totalCards = [car1, car2, car3, car4, car5, car6];
+  const totalCards = [
+    car1,
+    car2,
+    car3,
+    car4,
+    car5,
+    car6,
+    car6,
+    car6,
+    car6,
+    car6,
+    car6,
+    car6,
+    car6,
+    car6,
+  ];
 
   const [x, setX] = useState(0);
 
   const goLeft = () => {
-    setX(x + 320);
+    x === 0 ? setX(-320 * Math.floor(totalCards.length / 3)) : setX(x + 320);
   };
 
   const goRight = () => {
-    setX(x - 320);
+    x === -320 * Math.floor(totalCards.length / 3) ? setX(0) : setX(x - 320);
   };
 
   return (
@@ -65,11 +80,9 @@ export const Carousel = () => {
             </Card>
           ))}
         </Stack>
-        {x == 0 && (
-          <Button alignSelf="center" className="slideRight" variant="unstyled" onClick={goRight}>
-            <Icon as={IoIosArrowDropright} color="twitter.500" height={10} width={10} />
-          </Button>
-        )}
+        <Button alignSelf="center" className="slideRight" variant="unstyled" onClick={goRight}>
+          <Icon as={IoIosArrowDropright} color="twitter.500" height={10} width={10} />
+        </Button>
       </Stack>
     </Stack>
   );
