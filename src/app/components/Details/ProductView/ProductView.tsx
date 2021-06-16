@@ -23,14 +23,14 @@ const ProductView: FunctionComponent<ProductImagesProps> = ({product}) => {
   return (
     <Stack direction="column">
       <ProductImages changeImage={changeImage} product={product} productImage={productImage} />
-      <Stack padding={10}>
+      <Stack display={{base: "none", md: "flex"}} padding={10}>
         <Divider />
       </Stack>
       <Stack direction="column" display={{base: "none", md: "flex"}} padding={10}>
         <Text fontSize={30}> Mas publicacione del Vendedor</Text>
         <Carousel />
       </Stack>
-      <Stack padding={10}>
+      <Stack display={{base: "none", md: "flex"}} padding={10}>
         <Divider />
       </Stack>
     </Stack>

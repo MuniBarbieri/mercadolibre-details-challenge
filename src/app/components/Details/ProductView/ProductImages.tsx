@@ -29,8 +29,8 @@ export const ProductImages: FunctionComponent<ProductImagesProps> = ({
         </Box>
       ))}
     </Stack>
-    <Stack alignSelf="center" paddingRight={10}>
-      <Image boxSize="468px" objectFit="contain" src={productImage} />
+    <Stack alignSelf="center" paddingRight={{base: 0, md: 10}}>
+      <Image boxSize={{base: "200px", md: "470px"}} objectFit="contain" src={productImage} />
     </Stack>
   </Stack>
 );
