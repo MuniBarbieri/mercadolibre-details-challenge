@@ -1,5 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useContext} from "react";
 import {Stack} from "@chakra-ui/react";
+
+import DrawerContext from "../../../contexts/DrawerContest";
 
 import {Product} from "./types";
 import mock from "./mock";
@@ -12,8 +14,10 @@ interface DetailsScreenProps {
 }
 
 const DetailsScreen: FunctionComponent<DetailsScreenProps> = ({product = mock.product}) => {
+  const isDrawerOpen = useContext(DrawerContext);
+
   return (
-    <Stack alignItems="center" bg="gray.100" paddingY={6}>
+    <Stack alignItems="center" bg="gray.100" display={isDrawerOpen ? "none" : "flex"} paddingY={6}>
       <Stack
         bg="white"
         borderRadius="4px"

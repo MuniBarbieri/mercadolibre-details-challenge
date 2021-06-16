@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useEffect, Dispatch, SetStateAction} from "react";
 import {
-  Container,
   Stack,
   Box,
   Image,
@@ -9,6 +8,8 @@ import {
   StackDivider,
   Icon,
   Link,
+  useDisclosure,
+  Container,
 } from "@chakra-ui/react";
 import {AiOutlineSearch} from "react-icons/ai";
 import {GoLocation} from "react-icons/go";
@@ -18,16 +19,27 @@ import {RiShoppingCartLine} from "react-icons/ri";
 import {Url} from "../utilis";
 import logo from "../../assets/logo.png";
 
-const Navbar: React.FC = () => {
+import {MenuOptions} from "./MenuOptions";
+import {DrawerComponent} from "./Drawer";
+interface NavbarProps {
+  setIsDrawerOpen: Dispatch<SetStateAction<boolean>>;
+}
+const Navbar: React.FC<NavbarProps> = ({setIsDrawerOpen}) => {
+  const {isOpen, onClose, onToggle} = useDisclosure();
+
+  useEffect(() => {
+    setIsDrawerOpen(isOpen);
+  }, [isOpen, setIsDrawerOpen]);
+
   return (
     <Stack>
       <Box bg="primary.500" boxShadow="sm" paddingY="4" width="100%">
         <Container maxWidth="container.xl">
           <Stack direction="column" spacing={3}>
             <Stack direction={{base: "column", md: "row"}} justifyContent="space-between">
-              <Stack direction="row" flex={1} spacing={12}>
+              <Stack direction="row" flex={1} spacing={{base: 0, md: 12}}>
                 <Link href={Url.mercadolibreHome}>
-                  <Image objectFit="contain" src={logo} />
+                  <Image height={{base: "100%"}} objectFit="contain" src={logo} />
                 </Link>
                 <Stack
                   alignItems="center"
@@ -48,6 +60,7 @@ const Navbar: React.FC = () => {
                   />
                   <Icon as={AiOutlineSearch} color="gray.400" height={6} width={6} />
                 </Stack>
+                <DrawerComponent isOpen={isOpen} onClose={onClose} onToggle={onToggle} />
               </Stack>
               <Stack
                 alignItems="center"
@@ -91,35 +104,12 @@ const Navbar: React.FC = () => {
                 <Stack
                   alignItems="center"
                   color="blackAlpha.600"
-                  direction={{base: "column", md: "row"}}
+                  direction="row"
+                  display={{base: "none", md: "flex"}}
                   fontSize="sm"
                   spacing={6}
                 >
-                  <Stack direction="row" spacing={6}>
-                    <Link _hover={{color: "black"}} color="gray.700">
-                      <Text>Categorias</Text>
-                    </Link>
-                    <Link _hover={{color: "black"}} color="gray.700" href={Url.ofertas}>
-                      <Text>Ofertas</Text>
-                    </Link>
-                    <Link _hover={{color: "black"}} color="gray.700" href={Url.historial}>
-                      <Text>Historial</Text>
-                    </Link>
-                    <Link _hover={{color: "black"}} color="gray.700" href={Url.supermercado}>
-                      <Text>Supermercado</Text>
-                    </Link>
-                  </Stack>
-                  <Stack direction="row" spacing={6}>
-                    <Link _hover={{color: "black"}} color="gray.700" href={Url.moda}>
-                      <Text>Moda</Text>
-                    </Link>
-                    <Link _hover={{color: "black"}} color="gray.700" href={Url.login}>
-                      <Text>Vender</Text>
-                    </Link>
-                    <Link _hover={{color: "black"}} color="gray.700" href={Url.ayuda}>
-                      <Text>Ayuda</Text>
-                    </Link>
-                  </Stack>
+                  <MenuOptions />
                 </Stack>
               </Stack>
 
