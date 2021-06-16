@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect} from "react";
+import React, {FunctionComponent} from "react";
 import {Stack, Icon, Drawer, DrawerBody, DrawerHeader, IconButton} from "@chakra-ui/react";
 import {AiOutlineMenu} from "react-icons/ai";
 
@@ -14,25 +14,16 @@ export const DrawerComponent: FunctionComponent<DrawerComponentProps> = ({
   onClose,
   onToggle,
   isOpen,
-}) => {
-  useEffect(() => {
-    return () => {
-      console.log("Se ejecuta....");
-      onClose();
-    };
-  }, []);
-
-  return (
-    <Stack display={{md: "none"}}>
-      <IconButton aria-label="Menu" boxShadow="none" variant="unstyled" onClick={onToggle}>
-        <Icon as={AiOutlineMenu} />
-      </IconButton>
-      <Drawer isFullHeight isOpen={isOpen} placement="top" size="full" onClose={onClose}>
-        <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
-        <DrawerBody>
-          <MenuOptions />{" "}
-        </DrawerBody>
-      </Drawer>
-    </Stack>
-  );
-};
+}) => (
+  <Stack display={{md: "none"}}>
+    <IconButton aria-label="Menu" boxShadow="none" variant="unstyled" onClick={onToggle}>
+      <Icon as={AiOutlineMenu} />
+    </IconButton>
+    <Drawer isFullHeight isOpen={isOpen} placement="top" size="full" onClose={onClose}>
+      <DrawerHeader borderBottomWidth="1px">Bienvenido</DrawerHeader>
+      <DrawerBody>
+        <MenuOptions />{" "}
+      </DrawerBody>
+    </Drawer>
+  </Stack>
+);

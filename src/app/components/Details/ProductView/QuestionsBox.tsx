@@ -21,7 +21,7 @@ export const QuestionsBox: FunctionComponent = () => {
     <Stack direction="column" padding={10}>
       <form onSubmit={handleSubmit}>
         <FormLabel fontSize={20}>Preguntale al vendedor</FormLabel>
-        <Stack direction="row">
+        <Stack direction={{base: "column", md: "row"}}>
           <Input
             focusBorderColor="blue.400"
             placeholder="Escribi tu pregunta..."
