@@ -3,31 +3,9 @@ import {Stack, Text, Icon, Image, Button} from "@chakra-ui/react";
 import {IoIosArrowDropright, IoIosArrowDropleft} from "react-icons/io";
 import styled from "styled-components";
 
-import car1 from "../../../../assets/car1.png";
-import car2 from "../../../../assets/car2.png";
-import car3 from "../../../../assets/car3.png";
-import car4 from "../../../../assets/car4.png";
-import car5 from "../../../../assets/car5.png";
-import car6 from "../../../../assets/car6.png";
+import {totalCards} from "../../../utilis";
 
 export const Carousel = () => {
-  const totalCards = [
-    car1,
-    car2,
-    car3,
-    car4,
-    car5,
-    car6,
-    car6,
-    car6,
-    car6,
-    car6,
-    car6,
-    car6,
-    car6,
-    car6,
-  ];
-
   const [x, setX] = useState(0);
 
   const goLeft = () => {
