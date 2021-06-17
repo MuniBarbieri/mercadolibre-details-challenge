@@ -28,7 +28,7 @@ const DetailsScreen: FunctionComponent<DetailsScreenProps> = ({product = mock.pr
           <ProductView product={product} />
           <PurchaseDetails product={product} />
         </Stack>
-        <Stack width={{base: "100%", md: "50%"}}>
+        <Stack width={{base: "100%", md: "70%"}}>
           <QuestionsBox />
         </Stack>
       </Stack>

@@ -5,7 +5,7 @@ import {Product} from "../types";
 
 interface ProductImagesProps {
   product: Product;
-  changeImage: (e: any) => void;
+  changeImage: (e: React.MouseEvent<HTMLImageElement>) => void;
   productImage: string;
 }
 

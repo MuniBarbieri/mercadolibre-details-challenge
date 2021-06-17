@@ -14,10 +14,10 @@ interface ProductImagesProps {
 const ProductView: FunctionComponent<ProductImagesProps> = ({product}) => {
   const [productImage, setProductImage] = useState(stichW);
 
-  const changeImage = (e: any) => {
-    const img = e.target.src;
+  const changeImage = (e: React.MouseEvent<HTMLImageElement>) => {
+    const target = e.target as HTMLImageElement;
 
-    setProductImage(img);
+    setProductImage(target.src);
   };
 
   return (

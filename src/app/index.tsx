@@ -3,7 +3,7 @@ import {Container} from "@chakra-ui/react";
 
 import DrawerContext from "../contexts/DrawerContest";
 
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import Routes from "./routes";
 
 const App: React.FC = () => {
