@@ -1,7 +1,7 @@
 import React from "react";
 import {Stack, Button} from "@chakra-ui/react";
 
-import {Url} from "../../../utilis";
+import {Url} from "../../utilis";
 
 export const PurchaseButtons = () => {
   return (

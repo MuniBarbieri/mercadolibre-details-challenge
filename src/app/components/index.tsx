@@ -1,7 +1,7 @@
 import React, {FunctionComponent, useContext} from "react";
 import {Stack} from "@chakra-ui/react";
 
-import DrawerContext from "../../../contexts/DrawerContest";
+import DrawerContext from "../../contexts/DrawerContest";
 
 import {Product} from "./types";
 import mock from "./mock";

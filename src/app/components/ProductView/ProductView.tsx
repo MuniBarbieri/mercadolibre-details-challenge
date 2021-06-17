@@ -2,7 +2,7 @@ import React, {FunctionComponent, useState} from "react";
 import {Stack, Divider, Text} from "@chakra-ui/react";
 
 import {Product} from "../types";
-import stichW from "../../../../assets/stichW.png";
+import stichW from "../../../assets/stichW.png";
 
 import {Carousel} from "./Carousel";
 import {ProductImages} from "./ProductImages";

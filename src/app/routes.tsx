@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch, Route, Redirect} from "react-router-dom";
 
-import DetailsScreen from "./components/Details/index";
+import DetailsScreen from "./components/index";
 // import HomeScreen from "./screens/Home";
 
 const Routes: React.FC = () => {

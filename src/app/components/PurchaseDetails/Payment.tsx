@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from "react";
 import {Stack, Text, Link} from "@chakra-ui/react";
 
-import {Url} from "../../../utilis";
+import {Url} from "../../utilis";
 import {Product} from "../types";
 
 interface PaymentProps {

@@ -2,7 +2,7 @@ import React from "react";
 import {Stack, Text, Icon, Link} from "@chakra-ui/react";
 import {HiOutlineTruck} from "react-icons/hi";
 
-import {Url} from "../../../utilis";
+import {Url} from "../../utilis";
 
 export const Shipping = () => {
   return (

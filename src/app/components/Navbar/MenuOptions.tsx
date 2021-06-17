@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 import {Stack, Link, Text, Icon} from "@chakra-ui/react";
 
-import {options} from "../utilis";
-import DrawerContext from "../../contexts/DrawerContest";
+import {options} from "../../utilis";
+import DrawerContext from "../../../contexts/DrawerContest";
 
 export const MenuOptions = () => {
   const isDrawerOpen = useContext(DrawerContext);

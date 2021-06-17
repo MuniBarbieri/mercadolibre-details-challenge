@@ -3,7 +3,7 @@ import {Stack, Text, Icon, Image, Button} from "@chakra-ui/react";
 import {IoIosArrowDropright, IoIosArrowDropleft} from "react-icons/io";
 import styled from "styled-components";
 
-import {totalCards} from "../../../utilis";
+import {totalCards} from "../../utilis";
 
 export const Carousel = () => {
   const [x, setX] = useState(0);

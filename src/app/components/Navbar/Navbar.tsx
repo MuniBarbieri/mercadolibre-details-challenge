@@ -16,8 +16,8 @@ import {GoLocation} from "react-icons/go";
 import {FiPrinter} from "react-icons/fi";
 import {RiShoppingCartLine} from "react-icons/ri";
 
-import {Url} from "../utilis";
-import logo from "../../assets/logo.png";
+import {Url} from "../../utilis";
+import logo from "../../../assets/logo.png";
 
 import {MenuOptions} from "./MenuOptions";
 import {DrawerComponent} from "./Drawer";
