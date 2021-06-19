@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useContext} from "react";
-import {Stack} from "@chakra-ui/react";
+import {Stack, Text} from "@chakra-ui/react";
 
 import DrawerContext from "../../contexts/DrawerContest";
 
@@ -8,6 +8,7 @@ import mock from "./mock";
 import PurchaseDetails from "./PurchaseDetails";
 import ProductView from "./ProductView/ProductView";
 import {QuestionsBox} from "./ProductView/QuestionsBox";
+import {BuyersFeedback} from "./ProductPunctuation";
 
 interface DetailsScreenProps {
   product: Product;
@@ -30,6 +31,9 @@ const DetailsScreen: FunctionComponent<DetailsScreenProps> = ({product = mock.pr
         </Stack>
         <Stack width={{base: "100%", md: "70%"}}>
           <QuestionsBox />
+        </Stack>
+        <Stack width={{base: "100%", md: "70%"}}>
+          <BuyersFeedback />
         </Stack>
       </Stack>
     </Stack>
